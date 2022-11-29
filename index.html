@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="uk">
   <head>
-    <meta charset="UTF-8" >
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" >
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin >
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
       rel="stylesheet"
-    >
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
       integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
-    >
-    <link rel="stylesheet" href="./css/styles.css" >
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
   </head>
 
   <body>
@@ -137,7 +137,7 @@
                 width="370"
                 height="294"
                 class="foto"
-              >
+              />
               <div class="thumb-work">
                 <p class="title-work">Десктопні додатки</p>
               </div>
@@ -149,7 +149,7 @@
                 width="370"
                 height="294"
                 class="foto"
-              >
+              />
               <div class="thumb-work">
                 <p class="title-work">Мобільні додатки</p>
               </div>
@@ -161,7 +161,7 @@
                 width="370"
                 height="294"
                 class="foto"
-              >
+              />
               <div class="thumb-work">
                 <p class="title-work">Дизайнерські рішення</p>
               </div>
@@ -181,7 +181,7 @@
                 width="270"
                 height="260"
                 class="foto"
-              >
+              />
               <div class="card-foot">
                 <h3 class="title-team">Ігор Дем'яненко</h3>
                 <p lang="en" class="text-team">Product Designer</p>
@@ -224,7 +224,7 @@
                 width="270"
                 height="260"
                 class="foto"
-              >
+              />
               <div class="card-foot">
                 <h3 class="title-team">Ольга Рєпіна</h3>
                 <p lang="en" class="text-team">Frontend Developer</p>
@@ -267,7 +267,7 @@
                 width="270"
                 height="260"
                 class="foto"
-              >
+              />
               <div class="card-foot">
                 <h3 class="title-team">Микола Тарасов</h3>
                 <p lang="en" class="text-team">Marketing</p>
@@ -310,7 +310,7 @@
                 width="270"
                 height="260"
                 class="foto"
-              >
+              />
               <div class="card-foot">
                 <h3 class="title-team">Михайло Єрмаков</h3>
                 <p lang="en" class="text-team">UI Designer</p>
@@ -407,7 +407,8 @@
 
     <footer class="floor">
       <div class="container">
-        <div class="floor-left">
+        
+        <div class="footer-left">
           <a href="./index.html" class="logo"
             >Web<span class="white-studio">Studio</span></a
           >
@@ -433,8 +434,9 @@
             </ul>
           </address>
         </div>
-        <div class="floor-center">
-          <span class="join">приєднуйтесь</span>
+
+        <div class="footer-center">
+          <span class="title-footer">приєднуйтесь</span>
           <ul class="list social-networks">
             <li class="social-network">
               <a href="" target="_blank" class="icon">
@@ -466,9 +468,30 @@
             </li>
           </ul>
         </div>
+
+        <div class="footer-right">
+          <span class="title-footer">підпишіться на розсилку</span>
+          <form class="js-speaker-form form-footer">
+            <input
+              type="email"
+              name="e-mail"
+              aria-label="email"
+              placeholder="E-mail"
+              class="input-footer"
+            />
+            <button type="submit" class="button-subscribe-footer">
+              підписатися
+              <svg width="24" height="24">
+                <use href="./images/icons.svg#icon-send"></use>
+              </svg>
+            </button>
+          </form>
+        </div>
       </div>
     </footer>
+
     <!--                                  бекдроп та модальне вікно     -->
+
     <div class="backdrop is-hidden" data-modal>
       <div class="modal">
         <button type="button" class="close-modal" data-modal-close>
@@ -476,14 +499,21 @@
             <use href="./images/icons.svg#close"></use>
           </svg>
         </button>
+
         <!--                               форма модального вікна       -->
-        <form class="form-modal">
+
+        <form class="js-speaker-form form-modal">
           <p class="title-form">Залиште свої дані, ми вам передзвонимо</p>
           <div class="group-inputs">
             <div class="item-group">
               <label for="user-name" class="title-input">Ім'я</label>
               <div class="thumb-form">
-                <input type="text" name="name" id="user-name" class="input-box">
+                <input
+                  type="text"
+                  name="name"
+                  id="user-name"
+                  class="input-box"
+                />
                 <svg width="18" height="18" class="icon-modal">
                   <use href="./images/icons.svg#icon-person"></use>
                 </svg>
@@ -492,7 +522,12 @@
             <div class="item-group">
               <label for="user-tel" class="title-input">Телефон</label>
               <div class="thumb-form">
-                <input type="tel" name="phone" id="user-tel" class="input-box">
+                <input
+                  type="tel"
+                  name="phone"
+                  id="user-tel"
+                  class="input-box"
+                />
                 <svg width="18" height="18" class="icon-modal">
                   <use href="./images/icons.svg#icon-phone"></use>
                 </svg>
@@ -501,7 +536,12 @@
             <div class="item-group">
               <label for="user-email" class="title-input">Пошта</label>
               <div class="thumb-form">
-                <input type="email" name="e-mail" id="user-email" class="input-box">
+                <input
+                  type="email"
+                  name="e-mail"
+                  id="user-email"
+                  class="input-box"
+                />
                 <svg width="18" height="18" class="icon-modal">
                   <use href="./images/icons.svg#icon-email"></use>
                 </svg>
@@ -509,33 +549,49 @@
             </div>
             <div class="item-group">
               <label for="user-comment" class="title-input">Коментар</label>
-              <textarea name="comment" id="user-comment" placeholder="Введіть текст" class="input-box comment"></textarea>
+              <textarea
+                name="comment"
+                id="user-comment"
+                placeholder="Введіть текст"
+                class="input-box comment"
+              ></textarea>
             </div>
-          </div> 
-
+          </div>
           <div class="agree-form">
-            <input type="checkbox" name="accept" value="accept" id="accept">
-            <label for="accept" class="accept-contract">Погоджуюся з розсилкою та приймаю<span>
-                <a href="#" class="contract-terms">Умови договору</a>
+            <input
+              type="checkbox"
+              name="accept"
+              value="accept"
+              id="accept"
+              class="check-form visually-hidden"
+            />
+            <label for="accept" class="accept-contract">
+              <span>
+                <svg width="16" height="15">
+                  <use href="./images/icons.svg#icon-check"></use>
+                </svg>
               </span>
+              Погоджуюся з розсилкою та приймаю
+              <a href="#" class="contract-terms">Умови договору</a>
             </label>
           </div>
-
           <button type="submit" class="button-submit-form">Відправити</button>
         </form>
       </div>
     </div>
     <script>
       (() => {
-        document.querySelector('.js-speaker-form').addEventListener('submit', e => {
-          e.preventDefault();
+        document
+          .querySelector(".js-speaker-form")
+          .addEventListener("submit", (e) => {
+            e.preventDefault();
 
-          new FormData(e.currentTarget).forEach((value, name) =>
-            console.log(`${name}: ${value}`),
-          );
+            new FormData(e.currentTarget).forEach((value, name) =>
+              console.log(`${name}: ${value}`)
+            );
 
-          e.currentTarget.reset();
-        });
+            e.currentTarget.reset();
+          });
       })();
     </script>
     <script src="./js/modal.js"></script>

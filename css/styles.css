@@ -100,12 +100,16 @@ ul {
 .site-nav .item + .item {
   margin-left: 50px;
 }
-.site-nav .link {
-  position: relative;
-  display: flex;
-  padding-top: 32px;
-  padding-bottom: 32px;
-  color: var(--title-text-color);
+
+.link.current::after {
+  position: absolute;
+  content: "";
+  bottom: -1px;
+  width: 100%;
+  height: 4px;
+
+  background-color: var(--accent-color);
+  border-radius: 2px;
 }
 .hat-right {
   display: flex;
@@ -429,15 +433,17 @@ ul {
 }
 .floor .container {
   display: flex;
+  align-items: baseline;
+  justify-content: space-between;
 }
-.floor-center {
+.footer-center {
   margin-left: 70px;
 }
 .floor .icon {
   background-color: rgba(255, 255, 255, 0.1);
   fill: var(--text-and-primary-bg-white-color);
 }
-.join {
+.title-footer {
   display: block;
   margin-bottom: 20px;
   padding-top: 12px;
@@ -466,9 +472,15 @@ ul {
   line-height: 1.71;
   letter-spacing: 0.03em;
 }
-
 .contacts .highlighter {
   color: var(--text-and-primary-bg-white-color);
+}
+.site-nav .link {
+  position: relative;
+  display: flex;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  color: var(--title-text-color);
 }
 .site-nav .link.current,
 .link:hover,
@@ -476,15 +488,64 @@ ul {
   color: var(--accent-color);
 }
 
-.link.current::after {
-  position: absolute;
-  content: "";
-  bottom: -1px;
-  width: 100%;
-  height: 4px;
+/* ------------------------footer-right-----form------------------- */
+.footer-right {
+  display: block;
+  margin-left: 93px;
+}
 
+.form-footer {
+  display: flex;
+  gap: 12px;
+}
+.input-footer {
+  padding-left: 16px;
+  width: 358px;
+  height: 50px;
+  background-color: transparent;
+  outline: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  /* filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15)); */
+  border-radius: 4px;
+  transition: border 250ms var(--timing-function);
+}
+.input-footer:hover,
+.input-footer:focus {
+  border: 1px solid var(--accent-color);
+}
+.input-footer::placeholder {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.button-subscribe-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  min-width: 200px;
+  min-height: 50px;
+  border-color: transparent;
+  border-radius: 4px;
   background-color: var(--accent-color);
-  border-radius: 2px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+  color: var(--text-and-primary-bg-white-color);
+  text-transform: capitalize;
+  cursor: pointer;
+  fill: var(--text-and-primary-bg-white-color);
+  transition: background-color 250ms var(--timing-function);
+}
+.button-subscribe-footer:hover,
+.button-subscribe-footer:focus {
+  background-color: var(--button-active);
 }
 
 /* --------------------------------page Portfolio------------------ */
@@ -624,6 +685,7 @@ ul {
   cursor: pointer;
   transition: fill 250ms var(--timing-function);
 }
+/* -----------------------------------форма модального вікна--- */
 .form-modal {
   width: 100%;
   height: 100%;
@@ -654,14 +716,14 @@ ul {
   margin-bottom: 4px;
   font-weight: 400;
   font-size: 12px;
-  line-height: 1.17;  
+  line-height: 1.17;
   letter-spacing: 0.01em;
   color: var(--primary-text-color);
 }
 .thumb-form {
   position: relative;
 }
-.input-box { 
+.input-box {
   padding-left: 42px;
   width: 100%;
   height: 40px;
@@ -702,17 +764,43 @@ ul {
   color: rgba(117, 117, 117, 0.5);
 }
 .agree-form {
-  text-align: center;
+  display: flex;
+  justify-content: center;
   margin-bottom: 30px;
 }
 .accept-contract {
+  display: flex;
+  align-items: center;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: var(--primary-text-color);
 }
+.accept-contract > span {
+  width: 16px;
+  height: 15px;
+  border: 2px solid var(--title-text-color);
+  border-radius: 2px;
+  margin-right: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  fill: transparent;
+  transition: background-color 250ms var(--timing-function),
+    border 250ms var(--timing-function), fill 250ms var(--timing-function);
+}
+.check-form:checked + .accept-contract > span {
+  background-color: var(--accent-color);
+  border: none;
+  fill: var(--text-and-primary-bg-white-color);
+}
+.check-form:focus + .accept-contract > span,
+.check-form:hover + .accept-contract > span {
+  border: 2px solid var(--accent-color);
+}
 .contract-terms {
+  margin-left: 5px;
   color: var(--accent-color);
 }
 .button-submit-form {
@@ -732,8 +820,9 @@ ul {
   letter-spacing: 0.06em;
   color: var(--text-and-primary-bg-white-color);
   cursor: pointer;
+  transition: background-color 250ms var(--timing-function);
 }
-/* -------------------------розберись з кольором кнопки-----!!!!!!!!!! */
-/* .button-submit:hover {
+.button-submit-form:hover,
+.button-submit-form:focus {
   background-color: var(--button-active);
-} */
+}
